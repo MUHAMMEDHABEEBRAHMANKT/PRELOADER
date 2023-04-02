@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @font-face{
+    font-family: "Reospec";
+
+    src: url('./source/Reospec.otf')format(opentype);
+
+}
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.court{
+    background: #2a2727;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 30px;
+}.ball{
+    background: aqua;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    box-shadow: 0 0 15px aqua;
+    border-radius: 50%;
+    animation: bouns 2s linear infinite 1s;
+    
+}
+@keyframes bouns{
+    50%{
+        transform: translateY(100px);
+        height: 35px;
+        width: 44px;
+       
+    }
+}
+.ball:nth-child(1){
+    animation-delay:.4s;
+}
+.ball:nth-child(2){
+    animation-delay:.8s;
+}
+.ball:nth-child(3){
+    animation-delay:1.2s;
+}
+.ball:nth-child(4){
+    animation-delay:1.5s
+}
+.line{
+    background: #ffffff;
+    height: 7px;
+    width: 30%;
+    position: absolute;
+    transform: translateY(115px);
+}
+/* --------------body part-------------- */
+.display{
+ text-align: center;
+ display: flex;
+ align-items: center;
+ justify-content:center;
+ height: 100vh;
+font-family: "Alodiya";
+}
+@font-face{
+    font-family: "Alodiya";
+
+    src: url('source/Alodiya.otf')format(opentype);
+
+}
+    </style>
+
+</head>
+<body>
+    <div class="court">
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <div class="line"></div>
+    </div>
+    <!-- ---------------------------------- -->
+    
+    <!-- lets make body part -->
+    <div class="display">
+        <summary>
+        <h1> THIS WEB SITE IS LOADED</h1><br>
+        <h2> THIS PRELOADER OFFICIALLY FROM CODING WITH MAYAVI </h2>
+         <h3> <a href="www.instagram.com/maya_vi_e">FOLLOW FOR MORE</a> </h3>
+        </summary>
+    </div>
+
+    <!-- ---------------------------------- -->
+    <!-- lets make script -->
+    
+    <script>
+          // window.onload = function(){
+          //       document.querySelector(".court").style.display = "none";}
+        //  just rimove hear to last angle braket if you gointo publish the website in to inter net
+        window.onload = function(){
+        document.querySelector(".display").style.display = "none";
+    setTimeout(() => {
+        document.querySelector(".court").style.display = "none";
+        document.querySelector(".display").style.display = "flex";
+    }, 50);
+        }
+    </script>
+
+</body>
+</html>

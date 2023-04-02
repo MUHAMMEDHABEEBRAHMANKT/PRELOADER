@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+        background-color: #ff939355;
+    }
+    .container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* background-color:#ffffff; */
+      background-color:#000;
+      
+    }
+    .container .loader i {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%);
+      width: 20px;
+      height: 20px;
+      background-color: #ff004c;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #ff004c, 0 0 20px #ff004c,
+       0 0 50px #ff004c, 0 0 60px #ff004c,
+        0 0 10px #ff004c, 0 0 520px #ff004c,
+         0 0 10px #ff004c, 0 0 210px #ff004c,
+        0 0 90px #ff004c, 0 0 100px #ff004c;
+      z-index: 10;
+    }
+    .box {
+      position: relative;
+       width:100%;
+      height: 200px;
+      align-items: baseline;
+      justify-content: center;
+      display: flex;
+      -webkit-box-reflect: below 0 linear-gradient(transparent,transparent,#0005);
+              
+    }
+    .box .loader{
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      animation: rotate 2s linear infinite;
+    }
+    .box .loader:nth-child(1)::before,
+    .box .loader:nth-child(2)::before{
+       content: "";
+       position: absolute;
+       top:0;
+       left: 0;
+       width: 50%;
+       height: 100%;
+       background: linear-gradient(to top,
+       transparent,rgba(225,0,76.5));
+       background-size: 100px 180px;
+       background-repeat: no-repeat;
+       border-top-left-radius:100px ; 
+       border-bottom-left-radius: 100px; 
+       
+    }
+    .box .loader:nth-child(1),
+    .box .loader:nth-child(4){
+animation-delay: -1s;
+filter: hue-rotate(299deg);
+    }
+@keyframes rotate{
+0%{
+  transform: rotate(0deg);
+}
+100%{
+  transform: rotate(360deg);
+}
+}
+.box .loader span{
+  position: absolute;
+  /* background: #ffffff; */
+  background: #000;
+  inset: 20px;
+  border-radius: 50%;
+  z-index: 1;
+}
+/* ---------------------loder end------- */
+.body{
+    top: 0;
+    left:50%;
+    transform: translate(50%);
+    display:inline-block;
+    margin:250px 0 0 500px ;
+    
+}
+h1{
+    text-transform: uppercase;
+    font-size: 40pt;
+}
+h2{
+    text-transform: capitalize;
+    text-decoration:underline;
+    margin-left: -50px;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="loader"><span></span></div>
+        <div class="loader"><span></span></div>
+        <div class="loader"><i></i></div>
+        <div class="loader"><i></i></div>
+      </div>
+    </div>
+    <div class="body">
+        <h1>hi!</h1>
+        <h2>welcome to this page :)</h2>
+    </div>
+    <script>
+        window.onload=function(){
+            document.querySelector(".body").style.display = "none"
+         
+            setTimeout(() => {
+                document.querySelector(".container").style.display = "none";
+                document.querySelector(".body").style.display = "inline-block"
+            }, 5000);
+        }
+    </script>
+  </body>
+</html>

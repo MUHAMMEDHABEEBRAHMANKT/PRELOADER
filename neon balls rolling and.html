@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <script src="script.js"></script>
+</head>
+<body>
+    <style type="text/css">
+           section{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+}
+section .loader{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    
+   }
+   section .loader span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+    transform: rotate(calc(18deg * var(--i)));
+    
+       }
+      
+       section .loader span::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background: #00ffd5;
+        box-shadow: 0 0 10px #00ffe5,
+                    0 0 20px #00ffe5,
+                    0 0 40px #00ffe5,
+                    0 0 60px #00ffe5,
+                    0 0 80px #00ffe5,
+                    0 0 100px #00ffe5;
+                    animation: cr 2s linear infinite;
+                    animation-delay: calc(0.1s * var(--i));
+                    
+  }
+  @keyframes cr{
+      0%{
+          transform: scale(1);
+        }
+        80%,100%{
+            transform: scale(0);
+        filter: hue-rotate(520deg);
+    }
+}
+
+    </style>
+    <section>
+        <div class="loader">
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+        </div>
+    </section>
+    <div class="body">
+        
+    </div>
+   <script >
+    window.onload=function(){
+        document.querySelector(".body").style.display="none"; 
+        setTimeout(() => {
+            document.querySelector("section").style.display="none"; 
+            document.querySelector(".body").style.display="flex"; 
+            
+        },50000);
+       }
+   </script>
+</body>
+</html>
